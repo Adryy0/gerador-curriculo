@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Currículo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo no-print">
+    <h1>📄 Gerador de Currículo</h1>
+    <p>Preencha o formulário e veja o currículo sendo montado em tempo real</p>
+  </header>
+
+  <main class="layout">
+    <section class="editor no-print">
+      <h2>Seus dados</h2>
+
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <input id="nome" placeholder="Nome completo" autocomplete="name">
+        <input id="cargo" placeholder="Objetivo (ex.: Estagiária em Desenvolvimento)">
+        <input id="email" type="email" placeholder="E-mail" autocomplete="email">
+        <input id="telefone" placeholder="Telefone" autocomplete="tel">
+        <input id="cidade" placeholder="Cidade/UF">
+        <input id="linkedin" placeholder="LinkedIn ou GitHub (link)">
+      </fieldset>
+
+      <fieldset>
+        <legend>Resumo profissional</legend>
+        <textarea id="resumo" rows="4" placeholder="Fale em 2 ou 3 linhas sobre você e seu objetivo"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Formação</legend>
+        <div id="lista-formacao" class="itens"></div>
+        <button type="button" class="add" data-add="formacao">+ Adicionar formação</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Experiência</legend>
+        <div id="lista-experiencia" class="itens"></div>
+        <button type="button" class="add" data-add="experiencia">+ Adicionar experiência</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Habilidades (separe por vírgula)</legend>
+        <textarea id="habilidades" rows="2" placeholder="HTML, CSS, JavaScript, Git"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cursos e projetos (um por linha)</legend>
+        <textarea id="cursos" rows="3" placeholder="Lógica de programação - Alura"></textarea>
+      </fieldset>
+
+      <div class="botoes">
+        <button type="button" id="btn-pdf">⬇️ Baixar / imprimir em PDF</button>
+        <button type="button" id="btn-limpar" class="secundario">Limpar tudo</button>
+      </div>
+    </section>
+
+    <section class="previa-wrap">
+      <article id="curriculo" class="folha" aria-live="polite"></article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
